@@ -39,6 +39,23 @@ public class MyAList<E> implements Iterable<E>
 		list.set(index, item);
 	}
 
+	// Set item at a specified index
+	public void set(int index, E item) {
+		list.set(index, item);
+	}
+
+	// Return the size of the lsit
+	public int size() {
+		return list.size();
+	}
+
+	// See if the list is empty
+	public boolean isEmpty() {
+		return list.isEmpty();
+	}
+
+	//
+
 	@Override
 	public Iterator<E> iterator()
 	{
