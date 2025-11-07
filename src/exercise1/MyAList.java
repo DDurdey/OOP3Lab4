@@ -54,13 +54,21 @@ public class MyAList<E> implements Iterable<E>
 		return list.isEmpty();
 	}
 
-	//
+    // Convert the list to an array
+    public Object[] toArray() {
+        return list.toArray();
+    }
 
+	    // Clear all elements from the list
+    public void clear() {
+        list.clear();
+    }
+	
 	@Override
 	public Iterator<E> iterator()
 	{
 		// TODO Auto-generated method stub
-		return null;
+		return list.iterator();
 	}
 
 }
