@@ -17,6 +17,28 @@ public class MyAList<E> implements Iterable<E>
         this.list = new ArrayList<>(initialCapacity);
     }
 
+	// Add a single item to the list
+    public void add(E item) {
+        list.add(item);
+    }
+
+    // Add all items from another MyAList
+    public void addAll(MyAList<E> items) {
+        for (E item : items) {
+            this.list.add(item);
+        }
+    }
+
+	// Get item at a specified index
+	public E get(int index) {
+		return list.get(index);
+	}
+
+	// Remove an item at a specified index
+	public void remove(int index, E item) {
+		list.set(index, item);
+	}
+
 	@Override
 	public Iterator<E> iterator()
 	{
