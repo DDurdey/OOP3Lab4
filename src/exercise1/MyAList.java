@@ -23,7 +23,8 @@ public class MyAList<E> implements Iterable<E> {
      * Constructs an empty list with the specified initial capacity.
      *
      * @param initialCapacity the initial capacity of the list
-     * @throws IllegalArgumentException if the specified initial capacity is negative
+     * @throws IllegalArgumentException if the specified initial capacity is
+     *                                  negative
      */
     public MyAList(int initialCapacity) {
         this.list = new ArrayList<>(initialCapacity);
@@ -56,7 +57,8 @@ public class MyAList<E> implements Iterable<E> {
      *
      * @param index index of the element to return
      * @return the element at the specified position in this list
-     * @throws IndexOutOfBoundsException if the index is out of range (index < 0 || index >= size())
+     * @throws IndexOutOfBoundsException if the index is out of range (index < 0 ||
+     *                                   index >= size())
      */
     public E get(int index) {
         return list.get(index);
@@ -64,21 +66,25 @@ public class MyAList<E> implements Iterable<E> {
 
     /**
      * Removes the element at the specified position in this list.
-     * Shifts any subsequent elements to the left (subtracts one from their indices).
+     * Shifts any subsequent elements to the left (subtracts one from their
+     * indices).
      *
      * @param index the index of the element to be removed
-     * @throws IndexOutOfBoundsException if the index is out of range (index < 0 || index >= size())
+     * @throws IndexOutOfBoundsException if the index is out of range (index < 0 ||
+     *                                   index >= size())
      */
     public void remove(int index) {
         list.remove(index);
     }
 
     /**
-     * Replaces the element at the specified position in this list with the specified element.
+     * Replaces the element at the specified position in this list with the
+     * specified element.
      *
      * @param index index of the element to replace
-     * @param item element to be stored at the specified position
-     * @throws IndexOutOfBoundsException if the index is out of range (index < 0 || index >= size())
+     * @param item  element to be stored at the specified position
+     * @throws IndexOutOfBoundsException if the index is out of range (index < 0 ||
+     *                                   index >= size())
      */
     public void set(int index, E item) {
         list.set(index, item);
@@ -103,16 +109,19 @@ public class MyAList<E> implements Iterable<E> {
     }
 
     /**
-     * Returns an array containing all of the elements in this list in proper sequence.
+     * Returns an array containing all of the elements in this list in proper
+     * sequence.
      *
-     * @return an array containing all of the elements in this list in proper sequence
+     * @return an array containing all of the elements in this list in proper
+     *         sequence
      */
     public Object[] toArray() {
         return list.toArray();
     }
 
     /**
-     * Removes all of the elements from this list. The list will be empty after this call returns.
+     * Removes all of the elements from this list. The list will be empty after this
+     * call returns.
      */
     public void clear() {
         list.clear();
