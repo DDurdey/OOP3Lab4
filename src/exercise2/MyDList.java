@@ -2,9 +2,8 @@ package exercise2;
 
 /**
  * A doubly linked list implementation.
- * 
- * @author [Your Name] - Constructor, getHead(), addFirst(), addLast()
- * @author [Your Friend's Name] - removeFirst(), removeLast(), size(), isEmpty()
+ * Contributors: Person 1 (node & add operations), Person 2 (removals & checks)
+ *
  * @param <E> the type of elements in this list
  */
 public class MyDList<E>
@@ -15,8 +14,6 @@ public class MyDList<E>
 
   /**
    * Constructor to create an empty doubly linked list.
-   * 
-   * @author [Your Name]
    */
   public MyDList()
   {
@@ -27,8 +24,6 @@ public class MyDList<E>
 
   /**
    * Gets the head (first node) of the list.
-   * 
-   * @author [Your Name]
    * @return the head node, or null if the list is empty
    */
   public MyNode<E> getHead()
@@ -38,8 +33,7 @@ public class MyDList<E>
 
   /**
    * Adds an element to the beginning of the list.
-   * 
-   * @author [Your Name]
+
    * @param item the element to add
    */
   public void addFirst(E item)
@@ -67,8 +61,6 @@ public class MyDList<E>
 
   /**
    * Adds an element to the end of the list.
-   * 
-   * @author [Your Name]
    * @param item the element to add
    */
   public void addLast(E item)
@@ -96,51 +88,85 @@ public class MyDList<E>
 
   /**
    * Removes and returns the first element of the list.
-   * 
-   * @author [Your Friend's Name]
    * @return the removed element
    * @throws RuntimeException if the list is empty
    */
   public E removeFirst()
   {
-    // TODO: Person 2 will implement this
-    return null;
+    if (head == null)
+    {
+      throw new RuntimeException("List is empty");
+    }
+
+    E element = head.getElement();
+
+    // If only one element
+    if (head == tail)
+    {
+      head = null;
+      tail = null;
+    }
+    else
+    {
+      head = head.getNext();
+      if (head != null)
+      {
+        head.setPrev(null);
+      }
+    }
+
+    size--;
+    return element;
   }
 
   /**
    * Removes and returns the last element of the list.
-   * 
-   * @author [Your Friend's Name]
    * @return the removed element
    * @throws RuntimeException if the list is empty
    */
   public E removeLast()
   {
-    // TODO: Person 2 will implement this
-    return null;
+    if (tail == null)
+    {
+      throw new RuntimeException("List is empty");
+    }
+
+    E element = tail.getElement();
+
+    // If only one element
+    if (head == tail)
+    {
+      head = null;
+      tail = null;
+    }
+    else
+    {
+      tail = tail.getPrev();
+      if (tail != null)
+      {
+        tail.setNext(null);
+      }
+    }
+
+    size--;
+    return element;
   }
 
   /**
    * Returns the number of elements in the list.
-   * 
-   * @author [Your Friend's Name]
    * @return the size of the list
    */
   public int size()
   {
-    // TODO: Person 2 will implement this
     return size;
   }
 
   /**
    * Checks if the list is empty.
-   * 
-   * @author [Your Friend's Name]
    * @return true if the list is empty, false otherwise
    */
   public boolean isEmpty()
   {
-    // TODO: Person 2 will implement this
     return size == 0;
   }
 }
